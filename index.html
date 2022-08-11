@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Validación de Formulario con Javascript</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+	<main>
+		
+		<form action="" class="formulario" id="formulario">
+			<!-- Grupo: Nombre -->
+			<div class="formulario__grupo" id="grupo__nombre">
+				<label for="nombre" class="formulario__label">NOMBRE</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Juan">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El nombre permite solo letras</p>
+			</div>
+			
+			<!-- Grupo: Apellido -->
+			<div class="formulario__grupo" id="grupo__apellido">
+				<label for="apellido" class="formulario__label">APELLIDO</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Perez">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El apellido permite solo letras</p>
+			</div>
+			
+			<!-- Grupo: Edad -->
+			<div class="formulario__grupo" id="grupo__edad">
+				<label for="edad" class="formulario__label">EDAD</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="edad" id="edad" placeholder="29">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Solo numeros del 0 al 120</p>
+			</div>
+			
+			<!-- Grupo: Fecha Nacimiento -->
+			<div class="formulario__grupo" id="grupo__fecha_nacimiento">
+				<label for="fecha_nacimiento" class="formulario__label">FECHA NACIMIENTO</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="fecha_nacimiento" id="fecha_nacimiento" placeholder="05/10/1992">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">La fecha permite unicamente el formato DD/MM/AAAA</p>
+			</div>
+			
+			<!-- Grupo: DNI -->
+			<div class="formulario__grupo" id="grupo__dni">
+				<label for="dni" class="formulario__label">DNI</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="dni" id="dni" placeholder="37892911">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Debe permitir solamente el ingreso de 8 números</p>
+			</div>
+			
+			<!-- Grupo: CUIT -->
+			<div class="formulario__grupo" id="grupo__cuit">
+				<label for="cuit" class="formulario__label">Cuit</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="cuit" id="cuit" placeholder="20-37892911-4">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Debe permitir números y el carácter “-”, solamente con el siguiente formato ##-########-#</p>
+			</div>
+			
+			<!-- Grupo: CBU -->
+			<div class="formulario__grupo" id="grupo__cbu">
+				<label for="cbu" class="formulario__label">CBU</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="cbu" id="cbu" placeholder="0170204660000008786543">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Debe ingresar 22 numeros</p>
+			</div>
+			
+			<!-- Grupo: Sexo -->
+			<div class="formulario__grupo" id="grupo__sexo">
+				<label for="sexo" class="formulario__label">SEXO</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="sexo" id="sexo" placeholder="M">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">Debe ingresar F/M/I</p>
+			</div>
+
+			<!-- Grupo: Correo Electronico -->
+			<div class="formulario__grupo" id="grupo__correo">
+				<label for="correo" class="formulario__label">CORREO ELECTRONICO</label>
+				<div class="formulario__grupo-input">
+					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="juan@correo.com">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+			</div>
+
+			<!-- Grupo: Teléfono -->
+			<div class="formulario__grupo" id="grupo__telefono">
+				<label for="telefono" class="formulario__label">TELEFONO</label>
+				<div class="formulario__grupo-input">
+					<input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="1133238993">
+					<i class="formulario__validacion-estado fas fa-times-circle"></i>
+				</div>
+				<p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
+
+			<div class="formulario__grupo formulario__grupo-btn-enviar">
+				<button type="submit" class="formulario__btn">Enviar</button>
+				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+			</div>
+		</form>
+	</main>
+
+	<script src="js/formulario.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+</html>
